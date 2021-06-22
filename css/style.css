@@ -41,8 +41,8 @@
 }
 
 .nav{
-    background-color: rgba(255, 248, 220, 0.411);;
-    color: rgb(255, 248, 220);
+    background-color: rgba(255, 248, 220, 0.411);
+    color: rgba(241, 232, 195, 0.582);
     border-radius: 20px;
     padding: 10px;
     position: absolute;
@@ -54,5 +54,5 @@
 }
 
 .active{
-    color: #aec0ca;
+    color: rgb(255, 249, 225);;
 }

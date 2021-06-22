@@ -1,6 +1,7 @@
 const app = new Vue(
     {
         el: '#app',
+
         data: {
             counter: 0,
             sliders: [
@@ -12,6 +13,7 @@ const app = new Vue(
             active: 'active'
 
         },
+
         methods: {
             next: function(){
                 (this.counter == this.sliders.length - 1) ? this.counter = 0 : this.counter++;
@@ -22,7 +24,19 @@ const app = new Vue(
 
             dotClick: function(index){
                 this.counter = index;
+            },
+
+            play: function() {
+                let self = this;
+                this.timer = setInterval(function() {
+                  self.next();
+                }, 3000);
             }
+        },
+
+        created: function() {
+            this.play();
         }
+
     }
 );

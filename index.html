@@ -5,37 +5,49 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Vue Slider</title>
+    <!-- My CSS -->
     <link rel="stylesheet" href="css/style.css">
+    <!-- CDN font-awesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" integrity="sha512-iBBXm8fW90+nuLcSKlbmrPcLa0OT92xO1BIsZ+ywDWZCvqsWgccV3gFoRBv0z+8dLJgyAHIhR35VZc2oM/gI1w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!-- CDN Vue -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
 </head>
 <body>
 
     <div id="app" class="container">
 
+        <!-- start slider-wrapper -->
         <div class="slider-wrapper">
+
+            <!-- start arrow for prevoius slide -->
             <div class="prev" @click="prev">
                 <i class="fas fa-chevron-left"></i>
             </div>
+            <!-- end arrow for prevoius slide -->
+
+            <!--  start slides -->
             <div class="slider" >
                 <img :src="sliders[counter]">
             </div>
+            <!--  end slides -->
+
+            <!-- start arrow for next slide -->
             <div class="next" @click="next">
                 <i class="fas fa-chevron-right"></i>
             </div>
+            <!-- end arrow for next slide -->
 
+            <!-- start nav with dots -->
             <div class="nav">
-                <i class="fas fa-circle" :class="(index == counter) ?active: '' " v-for="(item, index) in sliders" @click="dotClick(index)"></i>
-                
+                <i class="fas fa-circle" :class="(index == counter) ? active:'' " v-for="(item, index) in sliders" @click="dotClick(index)"></i>    
             </div>
+            <!-- end nav with dots -->
+
         </div>
-
-
-
+        <!-- end slider-wrapper -->
 
     </div>
     
-
 
     <script src="js/script.js"></script>
 
