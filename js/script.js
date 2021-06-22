@@ -8,7 +8,8 @@ const app = new Vue(
                 'img/img-2.jpg',
                 'img/img-3.jpg',
                 'img/img-4.jpg'
-            ]
+            ],
+            active: 'active'
 
         },
         methods: {
@@ -17,8 +18,11 @@ const app = new Vue(
             },
             prev: function(){
                 (this.counter <= 0) ? this.counter = this.sliders.length - 1 : this.counter--;
-            }
+            },
 
+            dotClick: function(index){
+                this.counter = index;
+            }
         }
     }
 );

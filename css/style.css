@@ -24,6 +24,7 @@
 
 .slider{
     height: 100%;
+    width: 80%;
 }
 
 .slider img{
@@ -50,4 +51,8 @@
 
 .nav>i{
     margin: 0 10px;
+}
+
+.active{
+    color: #aec0ca;
 }

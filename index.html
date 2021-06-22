@@ -25,10 +25,8 @@
             </div>
 
             <div class="nav">
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
-                <i class="fas fa-circle"></i>
+                <i class="fas fa-circle" :class="(index == counter) ?active: '' " v-for="(item, index) in sliders" @click="dotClick(index)"></i>
+                
             </div>
         </div>
 
