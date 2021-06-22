@@ -4,6 +4,7 @@ const app = new Vue(
 
         data: {
             counter: 0,
+            timer:0,
             sliders: [
                 'img/img-1.jpg',
                 'img/img-2.jpg',
@@ -13,7 +14,7 @@ const app = new Vue(
             active: 'active'
 
         },
-
+        
         methods: {
             next: function(){
                 (this.counter == this.sliders.length - 1) ? this.counter = 0 : this.counter++;
@@ -27,9 +28,9 @@ const app = new Vue(
             },
 
             play: function() {
-                let self = this;
+                let app = this;
                 this.timer = setInterval(function() {
-                  self.next();
+                  app.next();
                 }, 3000);
             }
         },
