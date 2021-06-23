@@ -16,6 +16,8 @@ const app = new Vue(
 
         mounted: function() {
             this.play();
+            // or whitout the function play(in methods), directly as:
+            /* this.timer = setInterval(this.next, 3000);*/
             document.addEventListener('keyup', (element) =>{
                 if (element.key == 'ArrowRight') {
                     this.next();
