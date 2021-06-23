@@ -14,6 +14,17 @@ const app = new Vue(
             active: 'active'
         },
 
+        mounted: function() {
+            this.play();
+            document.addEventListener('keyup', (element) =>{
+                if (element.key == 'ArrowRight') {
+                    this.next();
+                } else if (element.key == 'ArrowLeft') {
+                    this.prev();
+                }
+            })
+        },
+
         methods: {
             // function for next slide
             next: function(){
@@ -28,24 +39,14 @@ const app = new Vue(
             // function for dot of nav(each dot is a different image)
             dotClick: function(index){
                 this.counter = index;
+                clearInterval = this.timer;
             },
 
             //function for autoplay
             play: function() {
-
-                this.timer = setInterval(this.next, 3000)
-
-                //alternative solution
-                // let app = this;
-                // this.timer = setInterval(function() {
-                //   app.next();
-                // }, 3000);
+                this.timer = setInterval(this.next, 3000);
             }
         },
-
-        created: function() {
-            this.play();
-        }
-
+        
     }
 );
